@@ -29,12 +29,12 @@ services:
     environment:
       TZ: ${TZ}
 
-  bahmni-config:
-    image: 'bahmni/clinic-config:${CONFIG_IMAGE_TAG:?}'
-    volumes:
-      - '${CONFIG_VOLUME:?}:/usr/local/bahmni_config'
-    logging: *log-config
-    restart: ${RESTART_POLICY}
+  # bahmni-config:
+  #   image: 'bahmni/clinic-config:${CONFIG_IMAGE_TAG:?}'
+  #   volumes:
+  #     - '${CONFIG_VOLUME:?}:/usr/local/bahmni_config'
+  #   logging: *log-config
+  #   restart: ${RESTART_POLICY}
 
   bahmni-lab:
     profiles: ["lab-lite","emr","bahmni-lite"]
@@ -138,7 +138,7 @@ services:
       COUNTRY_ID: ${CRATER_COUNTRY_ID:?}
       CRATER_DEFAULT_CURRENCY: ${CRATER_DEFAULT_CURRENCY:?}
       APP_DEBUG: ${CRATER_APP_DEBUG:?}
-
+     # CRATER_DEFAULT_CURRENCY: ${CRATER_DEFAULT_CURRENCY:?}
   crater-nginx:
     image: bahmni/crater-nginx:${CRATER_NGINX_IMAGE_TAG:?}
     profiles: ["crater","bahmni-lite"]
