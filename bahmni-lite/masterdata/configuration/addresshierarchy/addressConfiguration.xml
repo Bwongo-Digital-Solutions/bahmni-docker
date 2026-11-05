@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addressConfiguration>
+
+    <wipe>true</wipe>
+
+    <addressComponents>
+        <addressComponent>
+            <field>COUNTRY</field>
+            <nameMapping>ugandaemr.address.country</nameMapping>
+            <sizeMapping>40</sizeMapping>
+            <elementDefault>Uganda</elementDefault>
+            <requiredInHierarchy>true</requiredInHierarchy>
+        </addressComponent>
+        <addressComponent>
+            <field>COUNTY_DISTRICT</field>
+            <nameMapping>ugandaemr.address.district</nameMapping>
+            <sizeMapping>40</sizeMapping>
+            <requiredInHierarchy>true</requiredInHierarchy>
+        </addressComponent>
+        <addressComponent>
+            <field>STATE_PROVINCE</field>
+            <nameMapping>ugandaemr.address.county</nameMapping>
+            <sizeMapping>40</sizeMapping>
+            <requiredInHierarchy>true</requiredInHierarchy>
+        </addressComponent>
+        <addressComponent>
+            <field>ADDRESS_3</field>
+            <nameMapping>ugandaemr.address.subcounty</nameMapping>
+            <sizeMapping>60</sizeMapping>
+            <requiredInHierarchy>true</requiredInHierarchy>
+        </addressComponent>
+        <addressComponent>
+            <field>ADDRESS_4</field>
+            <nameMapping>ugandaemr.address.parish</nameMapping>
+            <sizeMapping>60</sizeMapping>
+            <requiredInHierarchy>true</requiredInHierarchy>
+        </addressComponent>
+        <addressComponent>
+            <field>ADDRESS_5</field>
+            <nameMapping>ugandaemr.address.village</nameMapping>
+            <sizeMapping>60</sizeMapping>
+            <requiredInHierarchy>true</requiredInHierarchy>
+        </addressComponent>
+    </addressComponents>
+
+    <lineByLineFormat>
+        <string>country</string>
+        <string>countyDistrict</string>
+        <string>stateProvince</string>
+        <string>address3</string>
+        <string>address4</string>
+        <string>address5</string>
+    </lineByLineFormat>
+
+    <addressHierarchyFile>
+        <filename>addresshierarchy.csv</filename>
+        <entryDelimiter>,</entryDelimiter>
+        <identifierDelimiter>^</identifierDelimiter>
+    </addressHierarchyFile>
+</addressConfiguration>
