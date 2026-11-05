@@ -114,8 +114,13 @@ services:
     logging: *log-config
 
   crater-php:
+    build:
+      context: ./crater-php
+      dockerfile: Dockerfile
     image: bahmni/crater-php:${CRATER_PHP_IMAGE_TAG:?}
     profiles: ["crater","bahmni-lite"]
+    env_file:
+      - .env.local
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -129,7 +134,7 @@ services:
       DB_USERNAME: ${CRATER_DB_USERNAME:?}
       DB_PASSWORD: ${CRATER_DB_PASSWORD:?}
       SANCTUM_STATEFUL_DOMAINS: ${CRATER_SANCTUM_STATEFUL_DOMAINS:?}
-      SESSION_DOMAIN: ${CRATER_SESSION_DOMAIN:?}
+      SESSION_DOMAIN: ${CRATER_SESSION_DOMAIN-}
       AUTO_INSTALL: ${CRATER_AUTO_INSTALL:?}
       ADMIN_NAME: ${CRATER_ADMIN_NAME:?}
       ADMIN_EMAIL: ${CRATER_ADMIN_EMAIL:?}
