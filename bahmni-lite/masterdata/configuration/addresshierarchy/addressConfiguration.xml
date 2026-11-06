@@ -6,38 +6,38 @@
     <addressComponents>
         <addressComponent>
             <field>COUNTRY</field>
-            <nameMapping>ugandaemr.address.country</nameMapping>
+            <nameMapping>Country</nameMapping>
             <sizeMapping>40</sizeMapping>
             <elementDefault>Uganda</elementDefault>
             <requiredInHierarchy>true</requiredInHierarchy>
         </addressComponent>
         <addressComponent>
             <field>COUNTY_DISTRICT</field>
-            <nameMapping>ugandaemr.address.district</nameMapping>
+            <nameMapping>District</nameMapping>
             <sizeMapping>40</sizeMapping>
             <requiredInHierarchy>true</requiredInHierarchy>
         </addressComponent>
         <addressComponent>
             <field>STATE_PROVINCE</field>
-            <nameMapping>ugandaemr.address.county</nameMapping>
+            <nameMapping>County</nameMapping>
             <sizeMapping>40</sizeMapping>
             <requiredInHierarchy>true</requiredInHierarchy>
         </addressComponent>
         <addressComponent>
             <field>ADDRESS_3</field>
-            <nameMapping>ugandaemr.address.subcounty</nameMapping>
+            <nameMapping>Sub-county</nameMapping>
             <sizeMapping>60</sizeMapping>
             <requiredInHierarchy>true</requiredInHierarchy>
         </addressComponent>
         <addressComponent>
             <field>ADDRESS_4</field>
-            <nameMapping>ugandaemr.address.parish</nameMapping>
+            <nameMapping>Parish</nameMapping>
             <sizeMapping>60</sizeMapping>
             <requiredInHierarchy>true</requiredInHierarchy>
         </addressComponent>
         <addressComponent>
             <field>ADDRESS_5</field>
-            <nameMapping>ugandaemr.address.village</nameMapping>
+            <nameMapping>Village</nameMapping>
             <sizeMapping>60</sizeMapping>
             <requiredInHierarchy>true</requiredInHierarchy>
         </addressComponent>
