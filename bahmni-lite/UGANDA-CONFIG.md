@@ -50,4 +50,4 @@ or change `CONFIG_VOLUME` as part of this config-image switch. Back up the
 OpenMRS database and configuration volume before applying masterdata changes.
 
 The current Uganda address hierarchy remains non-destructive
-(`<wipe>false</wipe>)) and uses the configured `addresshierarchy.csv`.
+(`<wipe>false</wipe>`) and uses the configured `addresshierarchy.csv`.
