@@ -33,6 +33,12 @@ services:
     image: '${CONFIG_IMAGE_REPOSITORY:-bahmni/clinic-config}:${CONFIG_IMAGE_TAG:?}'
     volumes:
       - '${CONFIG_VOLUME:?}:/usr/local/bahmni_config'
+    healthcheck:
+      test: ["CMD-SHELL", "test -s /usr/local/bahmni_config/openmrs/apps/home/whiteLabel.json && test -s /usr/local/bahmni_config/masterdata/configuration/addresshierarchy/addressConfiguration.xml"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
     logging: *log-config
     restart: ${RESTART_POLICY}
 
@@ -92,7 +98,10 @@ services:
       - 'sms-token:/openmrs/data/sms-token'
 
     depends_on:
-      - openmrsdb
+      openmrsdb:
+        condition: service_started
+      bahmni-config:
+        condition: service_healthy
     logging: *log-config
     restart: ${RESTART_POLICY}
 
@@ -249,6 +258,9 @@ services:
     profiles: ["emr","bahmni-lite","bahmni-mart"]
     volumes:
       - "${CONFIG_VOLUME:?}:/usr/local/apache2/htdocs/bahmni_config/:ro"
+    depends_on:
+      bahmni-config:
+        condition: service_healthy
     #   - "${BAHMNI_APPS_PATH:?}/ui/app/:/usr/local/apache2/htdocs/bahmni"
     #   - "${BAHMNI_APPS_PATH:?}/ui/node_modules/@bower_components/:/usr/local/apache2/htdocs/bahmni/components"
     logging: *log-config
