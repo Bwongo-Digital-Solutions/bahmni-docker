@@ -1,0 +1,3 @@
+[submodule "bahmni-lite/clinic-config"]
+	path = bahmni-lite/clinic-config
+	url = https://github.com/Bwongo-Digital-Solutions/clinic-config.git
